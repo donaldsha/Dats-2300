@@ -4,14 +4,13 @@ package com.company;
 //StudentNavn: Donald Shahini
 //StudentNummer: s331041
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
 
-    //tom konstruktoer som treng for testing av matodene i main klassen.
-    public Oblig1(){
-
-    }
+    //tom konstruktoer
+    public Oblig1(){ }
 
 
     //Oppgave 1
@@ -25,27 +24,25 @@ public class Oblig1 {
             throw new NoSuchElementException("Arrayen er tom!");
         }
 
+        int maks = 0;
         for (int i = lengde; i>1; i--){
             for (int j = 1; j<i; j++){
-                if (a[j-1] > a[j]){
-                    bytt(a, j-1, j);
+                if (a[j-1] > a[j]){ //sjekker om a[0] > a[1] osv
+                    int temp = a[j];
+                    a[j] = a[j-1];
+                    a[j-1] = temp;
                 }
             }
+            maks = a[lengde-1];
         }
-        int maks = a[lengde-1];
-        System.out.println("maks er: " + maks);
+        //System.out.println("maks er: " + maks);
         return maks;
     }
 
-    //den er en hjelpe metode som skal brukes til oppgave 1
-    //metoden bytter verdiene for sortering
-    public static void bytt(int[] array, int a, int b){
-        int temp = array[a]; array[a] = array[b];
-    }
 
     //ombyttinger skal returnere antall ombyttinger
     // Naar blir det flest ombyttinger? --> Naar arrayen er sortert baklengst
-    // Naar blir det færrest? --> Naar arrayen er sortert
+    // Naar blir det faerrest? --> Naar arrayen er ferdig sortert
     // Hvor mange blir det i gjennomsnitt?
     public static int ombyttinger(int[] a){
         int lengde = a.length;
@@ -53,12 +50,14 @@ public class Oblig1 {
         for (int i = lengde; i>1; i--){
             for (int j = 1; j<i; j++){
                 if (a[j-1] > a[j]){
-                    bytt(a, j-1, j);
+                    int temp = a[j];//TODO sjekk igjen
+                    a[j] = a[j-1];
+                    a[j-1] = temp;
                 }
                 ombytting++;
-                //System.out.println("ombytting " + omyttinger);
             }
         }
+        //System.out.println("Array " + Arrays.toString(a));
         return ombytting;
     }
 
@@ -128,4 +127,23 @@ public class Oblig1 {
             }
         }
     }
+
+    //oppgave 5
+    public static void rotasjon(char[] a){
+        int lengde = a.length-1;
+        for (int i = 0; i<lengde; i++){
+            for (int j = 0; j>i; j++){
+                char temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                //a[0] = temp;
+            }
+        }
+    }
+
+    //Oppgave 6
+    public static void rotasjon(char[] a, int k){
+
+    }
+
 }
