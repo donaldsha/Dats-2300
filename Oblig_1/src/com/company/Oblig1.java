@@ -131,19 +131,46 @@ public class Oblig1 {
     //oppgave 5
     public static void rotasjon(char[] a){
         int lengde = a.length-1;
-        for (int i = 0; i<lengde; i++){
-            for (int j = 0; j>i; j++){
-                char temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-                //a[0] = temp;
+        int value = 1;
+        for (int i = 0; i<value; i++){
+            for (int j = lengde; j>0; j--){
+                char temp = a[j];
+                a[j] = a[j-1];
+                a[j-1] = temp;
             }
         }
     }
 
     //Oppgave 6
     public static void rotasjon(char[] a, int k){
+        int lengde = a.length-1;
 
+        if (k>0) {
+            for (int i = 0; i < k; i++) {
+                for (int j = lengde; j > 0; j--) {
+                    char temp = a[j];
+                    a[j] = a[j - 1];
+                    a[j - 1] = temp;
+                }
+            }
+        } else if(k<0){
+            for (int i = 0; i > k; i--) {
+                for (int j = 0; j < lengde; j++) {
+                    char temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+            System.out.println(Arrays.toString(a));
+        }else{//Naar k = 0 skal arrayen skrives ut som den er
+            System.out.println(Arrays.toString(a));
+        }
     }
 
+    //oppgave 7
+    public static String flett(String s, String t){
+        String array = "Array";
+
+        return array;
+    }
 }

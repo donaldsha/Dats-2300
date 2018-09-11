@@ -26,10 +26,16 @@ public class Main {
         oblig1.delsortering(array);
         System.out.println(Arrays.toString(array));
 
-        char[] ar = {'A', 'B', 'C', 'D', 'E', 'F'};
-        oblig1.rotasjon(ar);
-
+        char[] ar = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+        System.out.println("Gamle array ser ut: " + Arrays.toString(ar));
+        //oppgave 5
+        //oblig1.rotasjon(ar);
+        //System.out.println("Char arrayen ser ut: " + Arrays.toString(ar));
+        //oppgave 6
+       // oblig1.rotasjon(ar, 3);
+        oblig1.rotasjon(ar,-2);
         System.out.println("Char arrayen ser ut: " + Arrays.toString(ar));
-
     }
+
+
 }
